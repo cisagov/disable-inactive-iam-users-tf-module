@@ -41,7 +41,7 @@ variable "lambda_function_name" {
 
 variable "lambda_schedule_interval" {
   default     = "1 day"
-  description = "A string representing a rate expression defining the cadence at which the Lambda function is to be run.  See https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-scheduled-rule-pattern.html#eb-rate-expressions for more details."
+  description = "A string representing a rate expression defining the cadence at which the Lambda function is to be run.  See [the relevant AWS documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-scheduled-rule-pattern.html#eb-rate-expressions) for more details."
   type        = string
 }
 
