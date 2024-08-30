@@ -26,20 +26,13 @@ data "aws_iam_policy_document" "lambdaexecution_doc" {
 
   statement {
     actions = [
-      "iam:ListUsers",
-    ]
-  }
-
-  statement {
-    actions = [
       "iam:DeleteLoginProfile",
       "iam:GetAccessKeyLastUsed",
       "iam:ListAccessKeys",
+      "iam:ListUsers",
       "iam:UpdateAccessKey",
     ]
-    resources = [
-      "*",
-    ]
+    resources = ["*"]
   }
 }
 
