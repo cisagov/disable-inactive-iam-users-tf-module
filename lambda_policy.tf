@@ -28,6 +28,7 @@ data "aws_iam_policy_document" "lambdaexecution_doc" {
     actions = [
       "iam:DeleteLoginProfile",
       "iam:GetAccessKeyLastUsed",
+      "iam:GetLoginProfile",
       "iam:ListAccessKeys",
       "iam:ListUsers",
       "iam:UpdateAccessKey",
