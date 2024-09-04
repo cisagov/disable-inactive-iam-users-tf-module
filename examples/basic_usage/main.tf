@@ -19,5 +19,7 @@ module "disable_inactive_iam_users" {
     aws = aws
   }
 
-  tags = var.tags
+  lambda_bucket_name = "the-lambdas"
+  lambda_key         = "disable_inactive_iam_users.zip"
+  tags               = var.tags
 }

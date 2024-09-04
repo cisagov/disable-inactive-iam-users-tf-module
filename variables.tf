@@ -4,6 +4,16 @@
 # You must provide a value for each of these parameters.
 # ------------------------------------------------------------------------------
 
+variable "lambda_bucket_name" {
+  description = "The name of the S3 bucket containing the Lambda function deployment package to disable inactive IAM users."
+  type        = string
+}
+
+variable "lambda_key" {
+  description = "The S3 key associated with the Lambda function deployment package to disable inactive IAM users."
+  type        = string
+}
+
 # ------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 #
@@ -42,12 +52,6 @@ variable "lambda_function_name" {
 variable "lambda_schedule_interval" {
   default     = "1 day"
   description = "A string representing a rate expression defining the cadence at which the Lambda function is to be run.  See [the relevant AWS documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-scheduled-rule-pattern.html#eb-rate-expressions) for more details."
-  type        = string
-}
-
-variable "lambda_zip_filename" {
-  default     = "lambda_build.zip"
-  description = "The name of the ZIP file containing the Lambda function deployment package to disable inactive IAM users.  The file must be located in the root directory of this project."
   type        = string
 }
 

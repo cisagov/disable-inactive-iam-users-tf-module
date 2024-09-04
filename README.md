@@ -12,7 +12,10 @@ and related resources.
 module "example" {
   source = "github.com/cisagov/disable-inactive-iam-users-tf-module"
 
-  expiration_days = 60
+  expiration_days    = 60
+  lambda_bucket_name = "the-lambdas"
+  lambda_key         = "disable_inactive_iam_users.zip"
+  tags               = var.tags
 }
 ```
 
@@ -60,10 +63,11 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | aws\_region | The AWS region to deploy into (e.g. us-east-1). | `string` | `"us-east-1"` | no |
 | expiration\_days | A strictly positive integer denoting the number of days after which an IAM user's access is considered inactive if unused. | `number` | `45` | no |
+| lambda\_bucket\_name | The name of the S3 bucket containing the Lambda function deployment package to disable inactive IAM users. | `string` | n/a | yes |
 | lambda\_function\_description | The description of the Lambda function. | `string` | `"Lambda function to disable inactive IAM users."` | no |
 | lambda\_function\_name | The name of the Lambda function that will disable inactive IAM users. | `string` | `"disable-inactive-iam-users"` | no |
+| lambda\_key\_name | The S3 key associated with the Lambda function deployment package to disable inactive IAM users. | `string` | n/a | yes |
 | lambda\_schedule\_interval | A string representing a rate expression defining the cadence at which the Lambda function is to be run.  See [the relevant AWS documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-scheduled-rule-pattern.html#eb-rate-expressions) for more details. | `string` | `"1 day"` | no |
-| lambda\_zip\_filename | The name of the ZIP file containing the Lambda function deployment package to disable inactive IAM users.  The file must be located in the root directory of this project. | `string` | `"lambda_build.zip"` | no |
 | lambdaexecution\_role\_description | The description to associate with the IAM role (and policy) that allows the disable-inactive-iam-users Lambda to list users, see when they last accessed the console or used their access keys, and if necessary disable the console access or access key. | `string` | `"Allows the disable-inactive-iam-users Lambda to list users, see when they last accessed the console or used their access keys, and if necessary disable the console access or access key."` | no |
 | lambdaexecution\_role\_name | The name to assign the IAM role (and policy) that allows the disable-inactive-iam-users Lambda to list users, see when they last accessed the console or used their access keys, and if necessary disable the console access or access key. | `string` | `"DisableInactiveIamUsersLambda"` | no |
 | tags | Tags to apply to all AWS resources created. | `map(string)` | `{}` | no |
