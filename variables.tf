@@ -39,7 +39,7 @@ variable "expiration_days" {
 
 variable "lambda_function_description" {
   default     = "Lambda function to disable inactive IAM users."
-  description = "The description of the Lambda function."
+  description = "The description of the Lambda function that will disable inactive IAM users."
   type        = string
 }
 
