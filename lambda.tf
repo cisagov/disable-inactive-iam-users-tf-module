@@ -10,7 +10,7 @@ resource "aws_lambda_function" "disable_inactive_iam_users" {
   handler       = "lambda_handler.handler"
   memory_size   = 128
   role          = aws_iam_role.lambdaexecution_role.arn
-  runtime       = "python3.9"
+  runtime       = "python3.10"
   s3_bucket     = var.lambda_bucket_name
   s3_key        = var.lambda_key
   timeout       = 900
