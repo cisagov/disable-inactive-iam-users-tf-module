@@ -1,24 +1,19 @@
-output "arn" {
-  description = "The EC2 instance ARN."
-  value       = aws_instance.example.arn
+output "cloudwatch_event_rule" {
+  value       = aws_cloudwatch_event_rule.lambda_schedule
+  description = "The CloudWatch event rule that kicks off the Lambda function at a regular cadence."
 }
 
-output "availability_zone" {
-  description = "The AZ where the EC2 instance is deployed."
-  value       = aws_instance.example.availability_zone
+output "cloudwatch_log_group" {
+  value       = aws_cloudwatch_log_group.lambda_logs
+  description = "The CloudWatch log group where the Lambda functions's logs are written."
 }
 
-output "id" {
-  description = "The EC2 instance ID."
-  value       = aws_instance.example.id
+output "lambda_function" {
+  value       = aws_lambda_function.disable_inactive_iam_users
+  description = "The Lambda function that disables inactive IAM users."
 }
 
-output "private_ip" {
-  description = "The private IP of the EC2 instance."
-  value       = aws_instance.example.private_ip
-}
-
-output "subnet_id" {
-  description = "The ID of the subnet where the EC2 instance is deployed."
-  value       = aws_instance.example.subnet_id
+output "lambda_role" {
+  value       = aws_iam_role.lambdaexecution_role
+  description = "The IAM role used by the Lambda function."
 }
