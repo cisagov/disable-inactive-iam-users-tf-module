@@ -14,7 +14,7 @@ Note that this example may create resources which cost money. Run
 | Name | Version |
 |------|---------|
 | terraform | ~> 1.1 |
-| aws | ~> 4.9 |
+| aws | ~> 6.7 |
 
 ## Providers ##
 
@@ -34,6 +34,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| aws\_region | The AWS region to deploy into (e.g. us-east-1). | `string` | `"us-east-1"` | no |
 | tags | Tags to apply to all AWS resources created. | `map(string)` | ```{ "Testing": true }``` | no |
 | tf\_role\_arn | The ARN of the role that can terraform non-specialized resources. | `string` | n/a | yes |
 

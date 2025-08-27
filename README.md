@@ -10,7 +10,7 @@ and related resources.
 
 ```hcl
 module "example" {
-  source = "github.com/cisagov/disable-inactive-iam-users-tf-module"
+  source = "github.com/cisagov/disable-inactive-iam-users-tf-module?ref=v1.0.0"
 
   expiration_days    = 60
   lambda_bucket_name = "the-lambdas"
@@ -66,7 +66,7 @@ No modules.
 | lambda\_bucket\_name | The name of the S3 bucket containing the Lambda function deployment package to disable inactive IAM users. | `string` | n/a | yes |
 | lambda\_function\_description | The description of the Lambda function that will disable inactive IAM users. | `string` | `"Lambda function to disable inactive IAM users."` | no |
 | lambda\_function\_name | The name of the Lambda function that will disable inactive IAM users. | `string` | `"disable-inactive-iam-users"` | no |
-| lambda\_key\_name | The S3 key associated with the Lambda function deployment package to disable inactive IAM users. | `string` | n/a | yes |
+| lambda\_key | The S3 key associated with the Lambda function deployment package to disable inactive IAM users. | `string` | n/a | yes |
 | lambda\_schedule\_interval | A string representing a rate expression defining the cadence at which the Lambda function is to be run.  See [the relevant AWS documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-scheduled-rule-pattern.html#eb-rate-expressions) for more details. | `string` | `"1 day"` | no |
 | lambdaexecution\_role\_description | The description to associate with the IAM role (and policy) that allows the disable-inactive-iam-users Lambda to list users, see when they last accessed the console or used their access keys, and if necessary disable the console access or access key. | `string` | `"Allows the disable-inactive-iam-users Lambda to list users, see when they last accessed the console or used their access keys, and if necessary disable the console access or access key."` | no |
 | lambdaexecution\_role\_name | The name to assign the IAM role (and policy) that allows the disable-inactive-iam-users Lambda to list users, see when they last accessed the console or used their access keys, and if necessary disable the console access or access key. | `string` | `"DisableInactiveIamUsersLambda"` | no |
