@@ -1,6 +1,8 @@
 # disable-inactive-iam-users-tf-module #
 
 [![GitHub Build Status](https://github.com/cisagov/disable-inactive-iam-users-tf-module/workflows/build/badge.svg)](https://github.com/cisagov/disable-inactive-iam-users-tf-module/actions)
+[![License](https://img.shields.io/github/license/cisagov/disable-inactive-iam-users-tf-module)](https://spdx.org/licenses/)
+[![CodeQL](https://github.com/cisagov/disable-inactive-iam-users-tf-module/workflows/CodeQL/badge.svg)](https://github.com/cisagov/disable-inactive-iam-users-tf-module/actions/workflows/codeql-analysis.yml)
 
 This repository contains Terraform code to deploy
 [`cisagov/disable-inactive-iam-users-lambda`](https://github.com/cisagov/disable-inactive-iam-users-lambda)
