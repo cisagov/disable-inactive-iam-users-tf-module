@@ -12,7 +12,7 @@ Note that this example may create resources which cost money. Run
 ## Requirements ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | terraform | ~> 1.1 |
 | aws | ~> 6.7 |
 
@@ -23,7 +23,7 @@ No providers.
 ## Modules ##
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | disable\_inactive\_iam\_users | ../../ | n/a |
 
 ## Resources ##
@@ -33,7 +33,7 @@ No resources.
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | aws\_region | The AWS region to deploy into (e.g. us-east-1). | `string` | `"us-east-1"` | no |
 | tags | Tags to apply to all AWS resources created. | `map(string)` | ```{ "Testing": true }``` | no |
 | tf\_role\_arn | The ARN of the role that can terraform non-specialized resources. | `string` | n/a | yes |
@@ -41,6 +41,6 @@ No resources.
 ## Outputs ##
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | disable\_inactive\_iam\_users | The outputs of the cisagov/disable-inactive-iam-users-tf-module module. |
 <!-- END_TF_DOCS -->
