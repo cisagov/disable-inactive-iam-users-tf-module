@@ -12,7 +12,7 @@ and related resources.
 
 ```hcl
 module "example" {
-  source = "github.com/cisagov/disable-inactive-iam-users-tf-module?ref=v1.1.0-rc.1"
+  source = "github.com/cisagov/disable-inactive-iam-users-tf-module?ref=v2.0.0"
 
   expiration_days    = 60
   lambda_bucket_name = "the-lambdas"
